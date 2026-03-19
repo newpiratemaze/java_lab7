@@ -6,7 +6,7 @@ import java.net.*;
 
 public class NetworkScanner {
     public static void main(String[] args) {
-        String baseIp = "192.168.0.44"; // Ваша подсеть
+        String baseIp = "192.168.0."; // Ваша подсеть
         int port = 12345;
 
         System.out.println("Сканируем сеть на наличие эхо-серверов...");
