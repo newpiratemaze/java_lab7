@@ -4,7 +4,7 @@ import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
 public class Client {
-    private static final String HOST = "localhost";
+    private static final String HOST = "192.168.0.44";
     private static final int PORT = 12345;
 
     public static void main(String[] args) {
