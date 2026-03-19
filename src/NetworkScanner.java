@@ -13,7 +13,7 @@ public class NetworkScanner {
 
         for (int i = 1; i <= 254; i++) {
             String ip = baseIp + i;
-
+            //System.out.println("Проверяемый IP: "+ip);
             // Пропускаем свой IP
             try {
                 if (ip.equals(getMyIp())) continue;
