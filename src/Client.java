@@ -4,10 +4,13 @@ import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
 public class Client {
-    private static final String HOST = "localhost";
+    public String HOST = "localhost";
     private static final int PORT = 12345;
 
-    public static void main(String[] args) {
+    public InputArgs params = new InputArgs();
+    public void main(String[] args) {
+        params = parseCmdArgs(args);
+        HOST = params.ip;
         try (Socket socket = new Socket(HOST, PORT);
              // 1. Получаем низкоуровневый поток байт
              OutputStream rawOutput = socket.getOutputStream();
@@ -40,5 +43,17 @@ public class Client {
         } catch (IOException e) {
             System.err.println("Ошибка ввода-вывода: " + e.getMessage());
         }
+    }
+
+    public InputArgs parseCmdArgs(String[] args) {
+        InputArgs result = new InputArgs();
+
+        for (int i = 0; i < args.length; i++) {
+            switch (args[i]) {
+                case "-ip" -> result.ip = args[++i];
+
+            }
+        }
+        return result;
     }
 }
